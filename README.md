@@ -83,12 +83,12 @@ To build a robust model, a dedicated **Time Dimension (Calendar Table)** was gen
 
 ### Page 1: Superstore Sales Analytics (Overview)
 <p align="center">
-  <img src="Dashboards/Overview_Page.png" width="90%" alt="Superstore Sales Overview Dashboard">
+  <img src="Overview_Page.png" width="90%" alt="Superstore Sales Overview Dashboard">
 </p>
 
 ### Page 2: Customer & Shipping Insights
 <p align="center">
-  <img src="Dashboards/Customer_Insights_Page.png" width="90%" alt="Customer and Shipping Insights Dashboard">
+  <img src="Customer_Insights_Page.png" width="90%" alt="Customer and Shipping Insights Dashboard">
 </p>
 
 ---
