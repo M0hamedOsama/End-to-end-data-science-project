@@ -1,17 +1,15 @@
-# 📊 Superstore Sales & Profit Analysis: An End-to-End Data Science Project
+#  Superstore Sales & Profit Analysis: An End-to-End Data Science Project
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![Data-Science](https://img.shields.io/badge/Data--Science-EDA%20%7C%20ML-green.svg)
-![Excel](https://img.shields.io/badge/Excel-Dashboard-success.svg)
 ![PowerBI](https://img.shields.io/badge/Power--BI-Analytics-orange.svg)
 
 ##  Project Overview
 This is a comprehensive, end-to-end Data Science and Business Intelligence project conducted on a retail database (**Superstore Giant**). The goal is to provide actionable business insights to understand sales trends, maximize profits, identify loss-making areas, and predict transaction profits using Machine Learning.
 
-To make this project impactful, the analysis is divided into three core deliverables:
-1. **Data Analytics & Machine Learning** (Python Notebook)
-2. **Interactive Executive Reporting** (Excel Dashboard)
-3. **Advanced Business Intelligence** (Power BI Dashboard)
+The analysis is divided into two core deliverables:
+1. **Data Analytics & Predictive Modeling** (Python Jupyter Notebook)
+2. **Advanced Business Intelligence Dashboard** (Two-Page Interactive Power BI Report)
 
 ---
 
@@ -26,11 +24,11 @@ With growing demands and cut-throat competition in the retail market, the Supers
 ##  Tech Stack & Tools
 * **Data Processing & ML:** Python (`Pandas`, `NumPy`, `Scikit-Learn`)
 * **Data Visualization:** `Matplotlib`, `Seaborn`
-* **Business Intelligence:** Microsoft Excel (Pivot Tables, Slicers), Power BI (DAX, Power Query, Advanced Visuals)
+* **Business Intelligence:** Power BI (DAX, Power Query, Multi-Page Interactive Reporting, Page Navigation)
 
 ---
 
-## Project Pipeline
+##  Project Pipeline
 
 ### 1. Data Cleaning & Understanding
 * Analyzed a dataset of 9,994 transaction rows and 21 features.
@@ -44,33 +42,62 @@ With growing demands and cut-throat competition in the retail market, the Supers
 ### 3. Machine Learning (Predictive Modeling)
 * **Problem Type:** Regression (Predicting `Profit`).
 * **Feature Engineering:** Extracted `Order Year` and `Order Month` from order dates.
-* **Preprocessing:** Applied One-Hot Encoding on categorical text columns (`Segment`, `Region`, `Category`, `Sub-Category`).
 * **Model:** Trained a **Random Forest Regressor** (80/20 train-test split).
-* **Evaluation:** Evaluated performance using Root Mean Squared Error (RMSE) and R² Score to map feature importance.
+* **Evaluation:** Evaluated performance using RMSE and R² Score to map feature importance for stakeholders.
 
 ---
 
-##  Business Intelligence Dashboards
+##  Power BI Data Architecture & DAX Measures
+To build a robust model, a dedicated **Time Dimension (Calendar Table)** was generated, and key metrics were implemented via DAX:
 
-###  Microsoft Excel Dashboard
-* **KPI Cards:** Highlights Total Sales, Total Profit, and Average Discounts at a glance.
-* **Dynamic Slicers:** Allows managers to filter metrics instantly by Region, Segment, and Category.
-* **Risk Alert Feature:** A dedicated visualization calling out top loss-making products to aid immediate strategic decisions.
+* **Total Sales:** `SUM('Sample - Superstore'[Sales])`
+* **Total Profit:** `SUM('Sample - Superstore'[Profit])`
+* **Profit Margin %:** `DIVIDE([Total Profit], [Total Sales], 0)`
+* **Total Orders:** `DISTINCTCOUNT('Sample - Superstore'[Order ID])`
 
-### Power BI Interactive Dashboard
-* **Geographical Insights:** Interactive map visualization to analyze sales distribution across US states and cities.
-* **Time Intelligence:** Line charts tracking monthly and yearly sales trends with drill-down capabilities.
-* **Predictive Analytics View:** Integrates data insights derived from the Random Forest model, visualizing feature importances for business stakeholders.
+---
+
+## Key Business Insights
+
+### 1. Financial Performance (Overview Page)
+* **Steady Growth:** Sales and profits exhibit a healthy upward trend from 2014 to 2017.
+* **The Profit Leak:** The **Tables** sub-category incurs losses of nearly **-$9.7K**, making it the primary driver of profit loss.
+* **Geographical Risk:** California and New York are profit engines, while Texas remains a deficit state.
+
+### 2. Customer Operations (Customer Insights Page)
+* **Segment Dominance:** The **Consumer** segment accounts for **45%** of total revenue.
+* **Logistics:** **Standard Class** shipping is the preferred method for over 3K orders.
+* **Matrix Analysis:** The profit leakage in *Tables* is consistent across all segments, indicating a flaw in pricing policy rather than customer type.
+
+---
+
+## Actionable Recommendations
+1. **Optimize Discount Thresholds:** Audit and reduce aggressive discounts on *Tables* and *Bookcases*.
+2. **Double Down on Winners:** Focus marketing on *Phones* and *Chairs* due to their stable high-profit yields.
+3. **Audit Texas Market:** Investigate the local operations to replicate the success of California and New York.
+
+---
+
+## Dashboard Previews
+
+### Page 1: Superstore Sales Analytics (Overview)
+<p align="center">
+  <img src="Dashboards/Overview_Page.png" width="90%" alt="Superstore Sales Overview Dashboard">
+</p>
+
+### Page 2: Customer & Shipping Insights
+<p align="center">
+  <img src="Dashboards/Customer_Insights_Page.png" width="90%" alt="Customer and Shipping Insights Dashboard">
+</p>
 
 ---
 
 ## Repository Structure
 ```text
 ├── Data/
-│   └── Sample - Superstore.csv      # The raw dataset
+│   └── Sample - Superstore.csv      
 ├── Notebooks/
-│   └── data_science_project.ipynb   # Python EDA, Preprocessing, and ML code
+│   └── data_science_project.ipynb   
 ├── Dashboards/
-│   ├── Excel_Dashboard.xlsx         # Dynamic Excel report
-│   └── PowerBI_Dashboard.pbix       # Power BI interactive file
-└── README.md                        # Project documentation
+│   └── PowerBI_Dashboard.pbix       
+└── README.md
