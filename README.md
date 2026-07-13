@@ -13,6 +13,7 @@ The analysis is divided into two core deliverables:
 
 ---
 
+
 ##  Business Problem Definition
 With growing demands and cut-throat competition in the retail market, the Superstore Giant needs to optimize its operations. This project answers critical business questions:
 * Which products, regions, categories, and customer segments should they target or avoid?
